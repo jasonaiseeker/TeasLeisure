@@ -21,7 +21,7 @@ The codebase is based on [CRMEB Java](https://github.com/crmeb/crmeb_java). Upst
 
 ## Development
 
-Install JDK 17, Maven 3.9+, Node.js 20+, MySQL 8.4, and Redis/Valkey. Copy `.env.example` to a private `.env` file and fill in credentials. Never commit `.env`.
+Install Git for Windows, JDK 17, Maven 3.9+, Node.js 20+, MySQL 8.4, and Redis/Valkey. Copy `.env.example` to a private `.env` file. Dot-source `scripts/load-env.ps1` in each backend PowerShell window before startup. Never commit `.env`.
 
 1. Import the CRMEB baseline SQL from `backend/sql/Crmeb_v3.1.sql`.
 2. Inspect and apply TL database migrations using [the migration tool](backend/tools/tl-migrate/README.md).
@@ -33,13 +33,15 @@ Install JDK 17, Maven 3.9+, Node.js 20+, MySQL 8.4, and Redis/Valkey. Copy `.env
 
 4. Run front/admin with the `tl-local` profile. Default API ports are front `8081` and admin `8080`.
 5. In `frontend/uni-app`, run `npm ci` and `npm run dev:h5`; use `npm run build:mp-weixin` for a WeChat Mini Program build.
-6. In `frontend/admin`, run `npm ci` and `npm run dev`.
+6. In `frontend/admin`, run `npm install` and `npm run dev`.
 
 Production builds require `VITE_TL_API_URL` with an HTTPS API origin. `VITE_TL_H5_URL` sets the H5 share origin.
 
 ## Browser demo
 
 For no-backend browser previews with local sample data, see [Demo setup](docs/DEMO.md). It includes the H5 customer experience and a platform moderation web console.
+
+See [Local development](docs/LOCAL_DEVELOPMENT.md) for environment loading, jar commands, ports, and computer migration steps.
 
 ## License
 

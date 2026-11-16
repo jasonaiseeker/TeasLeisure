@@ -12,6 +12,7 @@
 import { onMounted, ref } from 'vue'
 import request from '@/utils/request.js'
 import { useAppStore } from '@/store/app.js'
+import { toLogin } from '@/libs/login.js'
 
 defineProps({ active: { type: String, default: '' } })
 const appStore = useAppStore()
@@ -24,9 +25,17 @@ onMounted(async () => {
 })
 
 function open(page) {
+  if (page === 'publish' && !appStore.isLogin) {
+    toLogin()
+    return
+  }
   const target = `/pages/tl/${page}`
   if (page === 'index') {
     uni.reLaunch({ url: target })
+    return
+  }
+  if (page === 'publish') {
+    uni.navigateTo({ url: target })
     return
   }
   uni.redirectTo({ url: target })

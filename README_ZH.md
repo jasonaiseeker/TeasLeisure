@@ -24,7 +24,7 @@ CRMEB Java 上游：<https://github.com/crmeb/crmeb_java>。根目录保留上�
 
 ## 本地开发
 
-准备 JDK 17、Maven 3.9+、Node.js 20+、MySQL 8.4 和 Redis/Valkey。复制 `.env.example` 为本地 `.env`，填写数据库密码、JWT 密钥和资源地址；`.env` 不要提交。
+准备 Git for Windows、JDK 17、Maven 3.9+、Node.js 20+、MySQL 8.4 和 Redis/Valkey。复制 `.env.example` 为本地 `.env`，填写数据库账号密码、随机 JWT 密钥和可写图片目录；`.env` 不要提交。Java 不会自动读取根目录 `.env`，每个启动后端的 PowerShell 窗口先执行 `. .\scripts\load-env.ps1`。
 
 1. 导入 CRMEB 基线 SQL：`backend/sql/Crmeb_v3.1.sql`。
 2. 按 [迁移工具说明](backend/tools/tl-migrate/README.md)检查并应用数据库迁移。
@@ -36,11 +36,13 @@ CRMEB Java 上游：<https://github.com/crmeb/crmeb_java>。根目录保留上�
 
 4. 使用 `tl-local` profile 启动 front/admin；默认 API 端口分别为 `8081` 和 `8080`。
 5. 在 `frontend/uni-app` 执行 `npm ci`，使用 `npm run dev:h5:demo` 启动含模拟数据的 H5 演示，使用 `npm run dev:h5` 连接真实 API；使用 `npm run build:mp-weixin` 构建微信小程序。
-6. 在 `frontend/admin` 执行 `npm ci` 和 `npm run dev` 启动管理端。
+6. 在 `frontend/admin` 执行 `npm install` 和 `npm run dev` 启动管理端。
 
 生产前端构建需设置 `VITE_TL_API_URL` 为 HTTPS API 根域名；`VITE_TL_H5_URL` 用于生成 H5 分享链接。
 
 浏览器演示步骤见 [Demo 指南](docs/DEMO.md)，包含用户侧 H5 和平台审核 Web 页面，均带本地模拟数据。
+
+新电脑迁移步骤、端口及外部服务配置见 [本地开发说明](docs/LOCAL_DEVELOPMENT.md)。`frontend/admin` 暂无锁文件，使用 `npm install`；H5 有锁文件，使用 `npm ci`。
 
 ## 许可证
 

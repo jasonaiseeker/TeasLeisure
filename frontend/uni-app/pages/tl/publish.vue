@@ -34,6 +34,7 @@ import { onLoad } from '@dcloudio/uni-app'
 import request from '@/utils/request.js'
 import util from '@/utils/util.js'
 import { useAppStore } from '@/store/app.js'
+import { toLogin } from '@/libs/login.js'
 
 const store = useAppStore()
 const stallId = ref(null)
@@ -48,7 +49,7 @@ const submitting = ref(false)
 
 onLoad(async options => {
   stallId.value = options?.stallId ? Number(options.stallId) : null
-  if (!store.isLogin) { uni.showToast({ title: '登录后可发布摊位动态', icon: 'none' }); setTimeout(() => uni.navigateBack(), 500); return }
+  if (!store.isLogin) { toLogin(); return }
   await loadManagedStalls()
 })
 
