@@ -35,11 +35,13 @@ CRMEB Java 上游：<https://github.com/crmeb/crmeb_java>。根目录保留上�
    ```
 
 4. 使用 `tl-local` profile 启动 front/admin；默认 API 端口分别为 `8081` 和 `8080`。
-5. 在 `frontend/uni-app` 执行 `npm ci`，使用 `npm run dev:h5` 启动 H5，使用 `npm run build:mp-weixin` 构建微信小程序。
+5. 在 `frontend/uni-app` 执行 `npm ci`，使用 `npm run dev:h5:demo` 启动含模拟数据的 H5 演示，使用 `npm run dev:h5` 连接真实 API；使用 `npm run build:mp-weixin` 构建微信小程序。
 6. 在 `frontend/admin` 执行 `npm ci` 和 `npm run dev` 启动管理端。
 
 生产前端构建需设置 `VITE_TL_API_URL` 为 HTTPS API 根域名；`VITE_TL_H5_URL` 用于生成 H5 分享链接。
 
+浏览器演示步骤见 [Demo 指南](docs/DEMO.md)，包含用户侧 H5 和平台审核 Web 页面，均带本地模拟数据。
+
 ## 许可证
 
-仓库保留 CRMEB 上游许可证和源码版权声明。Maven/npm 依赖及随包图片、主题资源遵循各自许可证。
+TeasLeisure 新增的 TL 业务模块采用 MIT 许可证，见 [LICENSE-MIT](LICENSE-MIT)。CRMEB 衍生代码继续遵循上游 Apache-2.0 许可证，保留原有版权声明，见 [LICENSE](LICENSE)。第三方依赖、图片和主题资源遵循各自许可证。范围说明见 [LICENSES.md](LICENSES.md)。

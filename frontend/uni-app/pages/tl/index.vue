@@ -1,5 +1,6 @@
 <template>
   <view class="page">
+    <view v-if="demoMode" class="demo-notice">演示模式 · 展示数据为本地模拟内容</view>
     <view class="nav-title">首页</view>
 
     <view class="search-bar">
@@ -80,7 +81,9 @@ import request from '@/utils/request.js'
 import TlTabBar from './components/TabBar.vue'
 import RegionPicker from './components/RegionPicker.vue'
 import { stallLocationLabel } from './utils/stall-location.js'
+import { isDemoRequestEnabled } from '@/utils/tl-demo.js'
 
+const demoMode = isDemoRequestEnabled()
 const posts = ref([])
 const stalls = ref([])
 const feedMode = ref('posts')
@@ -229,6 +232,7 @@ function openPost(post) { uni.navigateTo({ url: `/pages/tl/post-detail?id=${post
 
 <style lang="scss" scoped>
 .page { min-height: 100vh; background: #f0f0f0; padding-bottom: 112rpx; box-sizing: border-box; }
+.demo-notice { padding: 14rpx 24rpx; background: #fff2d8; color: #8a5b1c; font-size: 22rpx; text-align: center; }
 .nav-title { height: 100rpx; background: #e4e4e4; display: flex; align-items: center; justify-content: center; color: #111; font-size: 30rpx; font-weight: 600; }
 .search-bar { display: flex; align-items: center; gap: 12rpx; margin: 18rpx 30rpx 0; padding: 10rpx 14rpx 10rpx 22rpx; border-radius: 36rpx; background: #fff; }.search-input { flex: 1; min-width: 0; height: 58rpx; font-size: 24rpx; }.clear-search { color: #888; font-size: 22rpx; }.search-button { margin: 0; padding: 0 24rpx; height: 58rpx; line-height: 58rpx; border-radius: 30rpx; background: #222; color: #fff; font-size: 22rpx; }
 .feed { padding: 40rpx 30rpx 24rpx; }

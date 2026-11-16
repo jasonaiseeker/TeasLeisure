@@ -37,6 +37,10 @@ Install JDK 17, Maven 3.9+, Node.js 20+, MySQL 8.4, and Redis/Valkey. Copy `.env
 
 Production builds require `VITE_TL_API_URL` with an HTTPS API origin. `VITE_TL_H5_URL` sets the H5 share origin.
 
+## Browser demo
+
+For no-backend browser previews with local sample data, see [Demo setup](docs/DEMO.md). It includes the H5 customer experience and a platform moderation web console.
+
 ## License
 
-The repository retains the CRMEB upstream license and source notices. Third-party Maven/npm dependencies and bundled imagery or themes follow their respective licenses.
+TeasLeisure-authored TL business modules are released under MIT; see [LICENSE-MIT](LICENSE-MIT). CRMEB-derived code remains under the upstream Apache-2.0 license in [LICENSE](LICENSE), with its copyright notices retained. Third-party dependencies, images, and themes follow their own licenses. See [LICENSES.md](LICENSES.md) for scope details.

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev:h5": "cross-env UNI_INPUT_DIR=./ uni",
+    "dev:h5:demo": "cross-env UNI_INPUT_DIR=./ VITE_TL_DEMO_MODE=true uni",
     "build:h5": "cross-env UNI_INPUT_DIR=./ uni build",
     "build:h5:local": "cross-env UNI_INPUT_DIR=./ uni build --mode development",
     "dev:mp-weixin": "cross-env UNI_INPUT_DIR=./ uni -p mp-weixin",

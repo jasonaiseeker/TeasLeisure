@@ -20,6 +20,7 @@ import {
 	checkLogin
 } from '../libs/login';
 import { useAppStore } from "@/store/app.js";
+import { demoRequest, isDemoRequestEnabled } from './tl-demo.js';
 
 // 在请求函数内按需获取 store 实例（Pinia 要求在 install 之后调用，
 // 这里延迟到调用时获取，避免模块加载顺序问题）
@@ -35,6 +36,9 @@ function baseRequest(url, method, data, {
 	noAuth = false,
 	noVerify = false
 }, params,prefix) {
+	if (isDemoRequestEnabled() && (url === 'city/list' || url === 'tl/stalls' || url.startsWith('tl/stalls/') || url === 'tl/categories' || url === 'tl/community/posts' || url.startsWith('tl/community/posts/'))) {
+		return demoRequest(url, method, data || {});
+	}
 	let Url = HTTP_REQUEST_URL;
 	let header = { ...(params != undefined ? HEADERPARAMS : HEADER) };
 	const appStore = getAppStore();
