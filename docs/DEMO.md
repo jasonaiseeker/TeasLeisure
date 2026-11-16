@@ -31,4 +31,4 @@ Browsing and reading are available. Authentication-dependent actions such as mer
 
 ## Demo licensing
 
-The original TeasLeisure fixtures and SVG illustrations are covered by `LICENSE-MIT`. Other bundled CRMEB assets retain their upstream notices and licenses.
+The TeasLeisure demo fixtures and SVG illustrations follow the repository license. Bundled third-party assets retain their upstream notices and licenses.

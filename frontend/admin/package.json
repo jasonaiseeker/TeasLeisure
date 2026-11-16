@@ -3,7 +3,7 @@
   "version": "5.0.0",
   "description": "TeasLeisure tl platform administration console based on CRMEB Java, Spring Boot, MyBatis-Plus, Redis and Vue.",
   "author": "CRMEB",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",

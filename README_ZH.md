@@ -46,4 +46,4 @@ CRMEB Java 上游：<https://github.com/crmeb/crmeb_java>。根目录保留上�
 
 ## 许可证
 
-TeasLeisure 新增的 TL 业务模块采用 MIT 许可证，见 [LICENSE-MIT](LICENSE-MIT)。CRMEB 衍生代码继续遵循上游 Apache-2.0 许可证，保留原有版权声明，见 [LICENSE](LICENSE)。第三方依赖、图片和主题资源遵循各自许可证。范围说明见 [LICENSES.md](LICENSES.md)。
+仓库统一采用 Apache License 2.0，见根目录 [LICENSE](LICENSE)。CRMEB 原有版权声明继续保留；第三方依赖、图片和主题资源保留各自的许可证声明。

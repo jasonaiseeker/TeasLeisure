@@ -45,4 +45,4 @@ See [Local development](docs/LOCAL_DEVELOPMENT.md) for environment loading, jar 
 
 ## License
 
-TeasLeisure-authored TL business modules are released under MIT; see [LICENSE-MIT](LICENSE-MIT). CRMEB-derived code remains under the upstream Apache-2.0 license in [LICENSE](LICENSE), with its copyright notices retained. Third-party dependencies, images, and themes follow their own licenses. See [LICENSES.md](LICENSES.md) for scope details.
+The repository is licensed under Apache License 2.0; see [LICENSE](LICENSE). CRMEB copyright notices remain in place. Third-party dependencies and bundled assets retain their own license notices.
